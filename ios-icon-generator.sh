@@ -19,40 +19,28 @@ function create_contents_json {
   cat <<EOT >> "$targetDestination/Contents.json"
 {
   "images" : [
-   {
-      "size" : "20x20",
+    {
       "idiom" : "iphone",
-      "filename" : "Icon-App-20x20@2x.png",
+      "size" : "20x20",
+      "filename" : "Icon-App-40x40@2x.png",
       "scale" : "2x"
     },
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon-App-20x20@3x.png",
+      "size" : "20x20",
+      "filename" : "Icon-App-60x60@3x.png",
       "scale" : "3x"
     },
     {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "20x20",
-      "filename" : "Icon-App-20x20@2x.png",
+      "idiom" : "iphone",
+      "size" : "29x29",
+      "filename" : "Icon-App-29x29@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
       "size" : "29x29",
-      "filename" : "Icon-Small@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
-      "size" : "29x29",
-      "filename" : "Icon-Small@3x.png",
+      "filename" : "Icon-App-29x29@3x.png",
       "scale" : "3x"
     },
     {
@@ -78,6 +66,18 @@ function create_contents_json {
       "size" : "60x60",
       "filename" : "Icon-60@3x.png",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "20x20",
+      "filename" : "Icon-App-20x20@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "20x20",
+      "filename" : "Icon-App-40x40@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "ipad",
@@ -143,12 +143,15 @@ function create_icons {
 
   # Settings
   create_icon "$image" "20"  "Icon-App-20x20@1x" "$targetDestination"
-  create_icon "$image" "20"  "Icon-App-20x20@2x" "$targetDestination"
-  create_icon "$image" "20"  "Icon-App-20x20@2x" "$targetDestination"
-  create_icon "$image" "20"  "Icon-App-20x20@3x" "$targetDestination"
+  create_icon "$image" "40"  "Icon-App-40x40@2x" "$targetDestination"
+  create_icon "$image" "60"  "Icon-App-60x60@3x" "$targetDestination"
+  create_icon "$image" "40"  "Icon-App-40x40@2x" "$targetDestination"
+  create_icon "$image" "58"  "Icon-App-29x29@2x" "$targetDestination"
+  create_icon "$image" "87"  "Icon-App-29x29@3x" "$targetDestination"
+
+
   create_icon "$image" "29"  "Icon-Small" "$targetDestination"
   create_icon "$image" "58"  "Icon-Small@2x" "$targetDestination"
-  create_icon "$image" "87"  "Icon-Small@3x" "$targetDestination"
 
   # Spotlight
   create_icon "$image" "40"  "Icon-Small-40" "$targetDestination"
